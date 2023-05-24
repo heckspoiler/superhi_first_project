@@ -15,13 +15,13 @@ const pages = [
   },
   {
     copy: "willing to cut his hair for a job",
-    background: "#f7fe00",
-    circle: "#3e78ed",
+    background: "#d3c7f3",
+    circle: "#f7fe00",
   },
   {
     copy: `contact my mom i mean agent and <a>download my resume</a>`,
-    background: "#edc7a9",
-    circle: "#3e78ed",
+    background: "#faffb8",
+    circle: "#b472e6",
   },
 ];
 
@@ -65,6 +65,8 @@ const updateSection = function () {
   outputTag.innerHTML = currentPage.copy;
   body.style.backgroundColor = currentPage.background;
   circle.style.backgroundColor = currentPage.circle;
+  body.style.transition = "all 0.5s ease-in-out";
+  circle.style.transition = "all 0.5s ease-in-out";
 };
 
 // event listeners
