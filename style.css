@@ -1,2 +1,33 @@
+@font-face {
+  font-family: "Kuga";
+  src: url("./fonts/Kuga.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Voca";
+  src: url("./fonts/VOCA.woff") format("woff");
+}
+
 :root {
+  --title-font-2: "Kuga", sans-serif;
+  --title-font: "Voca", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: var(--title-font);
+  font-size: 10rem;
+  letter-spacing: 20px;
+  transition: all 0.5s ease;
+}
+
+.active {
+  font-size: 11rem;
+  color: red;
 }
