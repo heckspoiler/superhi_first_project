@@ -1,15 +1,44 @@
 let pageNumber = 0;
+
+// content for the pages
+
+const pages = [
+  {
+    copy: "a Brooklyn-based graphic designer",
+    background: "#edc7a9",
+    circle: "#3e78ed",
+  },
+  {
+    copy: "enraged by little things",
+    background: "#a1fffe",
+    circle: "#e34a47",
+  },
+  {
+    copy: "willing to cut his hair for a job",
+    background: "#f7fe00",
+    circle: "#3e78ed",
+  },
+  {
+    copy: `contact my mom i mean agent and <a>download my resume</a>`,
+    background: "#edc7a9",
+    circle: "#3e78ed",
+  },
+];
+
+// pick the relevant tags
+
 const outputTag = document.querySelector("h2");
 const nextTag = document.querySelector("footer img.next");
 const previousTag = document.querySelector("footer img.prev");
 const randomTag = document.querySelector("footer img.random");
 const body = document.querySelector("body");
+const circle = document.querySelector("section div.circle");
 
 // next funtion to increase the pageNumber
 
 const next = function () {
   pageNumber = pageNumber + 1;
-  if (pageNumber > 10) {
+  if (pageNumber > pages.length - 1) {
     pageNumber = 0;
   }
   updateSection();
@@ -20,8 +49,8 @@ const next = function () {
 const previous = function () {
   pageNumber = pageNumber - 1;
 
-  if (pageNumber < 1) {
-    pageNumber = 50;
+  if (pageNumber < pages.length - 1) {
+    pageNumber = 3;
   }
 
   updateSection();
@@ -32,7 +61,10 @@ const previous = function () {
 // updating the section content and style
 
 const updateSection = function () {
-  outputTag.innerHTML = pageNumber;
+  const currentPage = pages[pageNumber];
+  outputTag.innerHTML = currentPage.copy;
+  body.style.backgroundColor = currentPage.background;
+  circle.style.backgroundColor = currentPage.circle;
 };
 
 // event listeners
