@@ -34,7 +34,7 @@ const randomTag = document.querySelector("footer img.random");
 const body = document.querySelector("body");
 const circle = document.querySelector("section div.circle");
 
-// next funtion to increase the pageNumber
+// next function to increase the pageNumber
 
 const next = function () {
   pageNumber = pageNumber + 1;
@@ -49,14 +49,19 @@ const next = function () {
 const previous = function () {
   pageNumber = pageNumber - 1;
 
-  if (pageNumber < pages.length - 1) {
-    pageNumber = 3;
+  if (pageNumber < 0) {
+    pageNumber = pages.length - 1;
   }
 
   updateSection();
 };
 
 // random function to pick a random slide
+
+const random = function () {
+  pageNumber = Math.floor(Math.random() * pages.length);
+  updateSection();
+};
 
 // updating the section content and style
 
@@ -73,3 +78,16 @@ const updateSection = function () {
 
 nextTag.addEventListener("click", next);
 previousTag.addEventListener("click", previous);
+randomTag.addEventListener("click", random);
+
+// when a user presses a key check for arrow left or right and do next or prev correctly
+
+document.addEventListener("keyup", function (event) {
+  console.log(event);
+  if (event.key == "ArrowRight") {
+    next();
+  }
+  if (event.key == "ArrowLeft") {
+    previous();
+  }
+});
