@@ -1,15 +1,16 @@
-const tag = document.querySelector("h2");
+let pageNumber = 0;
+const outputTag = document.querySelector("h2");
 const nextTag = document.querySelector("footer img.next");
+const randomTag = document.querySelector("footer img.random");
 const body = document.querySelector("body");
 
-tag.innerHTML = "this is a test";
-
-tag.style.color = "red";
-
-const updateTag = function () {
-  tag.innerHTML = "fucking your face";
-  tag.style.color = "blue";
-  body.style.backgroundColor = "violet";
+const next = function () {
+  pageNumber = pageNumber + 1;
+  updateSection();
 };
 
-nextTag.addEventListener("click", updateTag);
+const updateSection = function () {
+  outputTag.innerHTML = pageNumber;
+};
+
+nextTag.addEventListener("click", next);
