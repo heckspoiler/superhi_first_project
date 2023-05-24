@@ -19,7 +19,7 @@ const pages = [
     circle: "#f7fe00",
   },
   {
-    copy: `contact my mom i mean agent and <a>download my resume</a>`,
+    copy: `call my mom i mean agent and <a href="#" class="anchor">download my resume</a>`,
     background: "#faffb8",
     circle: "#b472e6",
   },
