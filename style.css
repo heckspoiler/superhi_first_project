@@ -26,9 +26,6 @@ body {
       padding: 0;
       box-sizing: border-box;
       font-size: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
       background-color: #edc7a9;
       background-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0));
@@ -50,9 +47,19 @@ h1 {
       font-size: 1.5rem;
       letter-spacing: 10px;
       transition: all 0.5s ease;
+      margin-top: 10px;
+      margin-bottom: 10px;
 }
 
 h2 {
       font-family: var(--title-font);
       font-size: 10vmin;
+}
+
+section div.circle {
+      width: 20px;
+      height: 20px;
+      background-color: #3e78ed;
+      border-radius: 50%;
+      display: inline-block;
 }
