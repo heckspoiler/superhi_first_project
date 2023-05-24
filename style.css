@@ -51,6 +51,12 @@ h1 {
       margin-bottom: 10px;
 }
 
+.hover {
+      font-family: var(--special-font);
+      color: red;
+      font-size: 2rem;
+}
+
 h2 {
       font-family: var(--title-font);
       font-size: 10vmin;
